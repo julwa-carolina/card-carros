@@ -1,0 +1,54 @@
+:root {
+    ---Gold: hsl(31, 77%, 52%);
+    ---Cyan: hsl(184, 100%, 22%);
+    ---Green: hsl(179, 100%, 13%);
+    ---Transparentwhite: hsla(0, 0%, 100%, 0.75);
+    ---Gray: hsl(0, 0%, 95%);  /* background, headings, buttons */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(---Gray);
+    display: grid;
+    grid-template-columns: auto 90% auto
+}
+
+main {
+    margin-top: 80px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    grid-column: 2;
+}
+
+div {
+    width: 90%;
+    height: 400px;
+}
+
+div#sedan {
+    background-color: var(---Gold);
+    border-radius: 8px 8px 0px 0px;
+}
+
+div#suv {
+    background-color: var(---Cyan);
+}
+
+div#luxury {
+    background-color: var(---Green);
+    border-radius: 0px 0px 8px 8px;
+}
+
+footer {
+    grid-column: 2;
+}
