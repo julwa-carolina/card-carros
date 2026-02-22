@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,700&family=Lexend+Deca&display=swap');
+
+/* fontes */
+.big-shoulders {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lexend-deca {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* cores do projeto */
 :root {
     ---Gold: hsl(31, 77%, 52%);
     ---Cyan: hsl(184, 100%, 22%);
     ---Green: hsl(179, 100%, 13%);
-    ---Transparentwhite: hsla(0, 0%, 100%, 0.75);
-    ---Gray: hsl(0, 0%, 95%);  /* background, headings, buttons */
+    ---texto-paragrafo: hsla(0, 0%, 100%, 0.75);
+    ---cinza: hsl(0, 0%, 95%);  /* background, headings, buttons */
 }
 
+/* reset */
 * {
     padding: 0;
     margin: 0;
@@ -14,14 +33,14 @@
 }
 
 body {
-    background-color: var(---Gray);
+    background-color: var(---cinza);
     display: grid;
     grid-template-columns: auto 90% auto
 }
 
 main {
     margin-top: 80px;
-    
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,25 +49,148 @@ main {
     grid-column: 2;
 }
 
+/* Configuracoes gerais da Div */
 div {
     width: 90%;
-    height: 400px;
+    height: 50%;
+    padding: 60px;
+    color: var(---cinza);
+    
 }
 
+div p {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1em;
+    margin: 30px 30px 30px 0px;
+    color: var(---texto-paragrafo);
+    line-height: 1.8em;
+    
+}
+
+div h1 {
+    font-family: "Big Shoulders", sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    margin-top: 30px;
+}
+
+div button {
+    padding: 20px;    
+    font-size: 1em;
+    border-radius: 30px;
+    border: none;
+    font-family: "Lexend Deca", sans-serif;
+    cursor: pointer;
+}
+
+div button:hover {
+    border: 2px solid var(---cinza);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Container do Sedan laranja */
 div#sedan {
     background-color: var(---Gold);
     border-radius: 8px 8px 0px 0px;
 }
 
+div#sedan button {
+    color: var(---Gold);
+}
+
+div#sedan button:hover {
+    background-color: var(---Gold);
+    color: var(---cinza);
+}
+
+/* Container da Suv ciano */
 div#suv {
     background-color: var(---Cyan);
 }
 
+div#suv button {
+    color: var(---Cyan);
+}
+
+div#suv button:hover {
+    background-color: var(---Cyan);
+    color: var(---cinza);
+}
+
+/* Container do Luxury verde escuro */
 div#luxury {
     background-color: var(---Green);
     border-radius: 0px 0px 8px 8px;
 }
 
+div#luxury button {
+    color: var(---Green);
+}
+
+div#luxury button:hover {
+    background-color: var(---Green);
+    color: var(---cinza);
+}
+
 footer {
     grid-column: 2;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1em;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+@media screen and (min-width: 1028px) {
+    body {
+        grid-template-rows: auto 95vh auto 50px;
+    }
+    main {
+        flex-direction: row;
+        grid-row: 2;
+    }
+
+    div {
+        width: 60vw;
+        height: 75%;
+    }
+
+    div button {
+        margin-top: 40px;
+    }
+
+    div#sedan {
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    div#luxury {
+        border-radius: 0px 8px 8px 0px;
+    }
+    footer {
+        grid-row: 4;
+    }
+}
+
+@media screen and (min-width: 1190px) {
+    div {
+        width: 50vw;
+
+    }
+}
+
+@media screen and (min-width: 1288px) {
+    div {
+        width: 30vw;
+
+    }
+}
+
+@media screen and (min-width: 1520px) {
+    div {
+        width: 20vw;
+    }
 }
